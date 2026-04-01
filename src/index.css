@@ -6,11 +6,19 @@
   background: #f7fafc;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-feature-settings: 'cv02' 1, 'cv03' 1, 'cv04' 1, 'cv06' 1;
-  --ace-blue: #0f6e8c;
-  --ace-blue-deep: #0c5c75;
-  --ace-yellow: #f2c94c;
-  --ace-green: #1f7a35;
-  --ace-gray: #f8fafc;
+  --ace-primary: #0f6e8c;
+  --ace-primary-dark: #0c5c75;
+  --ace-primary-soft: rgba(15, 110, 140, 0.18);
+  --ace-secondary: #f2c94c;
+  --ace-secondary-soft: rgba(242, 201, 76, 0.18);
+  --ace-success: #1f7a35;
+  --ace-background: #f7fafc;
+  --ace-surface: #ffffff;
+  --ace-card: #f8fafc;
+  --ace-border: #e2e8f0;
+  --ace-muted: #64748b;
+  --ace-muted-strong: #334155;
+  --ace-text: #0f3547;
   --ace-slate: #eef2f7;
 }
 
@@ -19,7 +27,10 @@ html {
 }
 
 body {
-  @apply min-h-screen bg-slate-50 text-slate-900 antialiased;
+  min-height: 100vh;
+  background: var(--ace-background);
+  color: var(--ace-text);
+  @apply antialiased;
 }
 
 #root {
@@ -35,6 +46,32 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+@layer utilities {
+  .text-ace-primary {
+    color: var(--ace-primary);
+  }
+
+  .bg-ace-primary {
+    background-color: var(--ace-primary);
+  }
+
+  .bg-ace-secondary {
+    background-color: var(--ace-secondary);
+  }
+
+  .text-ace-text {
+    color: var(--ace-text);
+  }
+
+  .bg-ace-background {
+    background-color: var(--ace-background);
+  }
+
+  .border-ace {
+    border-color: var(--ace-border);
+  }
 }
 
 ::selection {

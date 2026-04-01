@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Building2, Globe2, Sparkles, Bell, BookOpen } from 'lucide-react'
+import { ArrowRight, Building2, Globe2, Bell, BookOpen } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SectionHeader from '../components/ui/SectionHeader'
 import ProgramCard from '../components/ui/ProgramCard'
@@ -17,89 +17,13 @@ import {
     staffList,
     researchHighlights,
 } from '../data/content'
+import Hero from '../components/ui/Hero'
 
-const aceiotLogo = new URL('../assets/logo.png', import.meta.url).href
-const urLogo = new URL('../assets/urlogo2019.png', import.meta.url).href
-const worldBankLogo = new URL('../assets/wrld.png', import.meta.url).href
 
 export default function Home() {
     return (
-        <div className="space-y-20">
-            <section id="home" className="overflow-hidden rounded-[32px] bg-[#f8fbfd] px-6 py-16 sm:px-10 lg:px-16">
-                <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 24 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7 }}
-                        className="space-y-8"
-                    >
-                        <span className="inline-flex items-center gap-2 rounded-full bg-[#eaf8ff] px-4 py-2 text-sm font-semibold text-[#0f6e8c]">
-                            <Sparkles className="h-4 w-4" />
-                            World Bank partnership supporting ICT excellence
-                        </span>
-                        <div className="space-y-6">
-                            <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-                                ACEIoT at the University of Rwanda: advancing African excellence in Internet of Things research.
-                            </h1>
-                            <p className="max-w-2xl text-lg leading-8 text-slate-600">
-                                Join our interdisciplinary Masters, PhD, and professional ICT programs focused on intelligent systems, digital infrastructure, and sustainable innovation.
-                            </p>
-                        </div>
-                        <div className="flex flex-wrap gap-4">
-                            <Link
-                                to="/programs"
-                                className="inline-flex items-center justify-center rounded-full bg-[#0f6e8c] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#0c5c75]"
-                            >
-                                Explore Programs
-                            </Link>
-                            <a
-                                href="#background"
-                                className="inline-flex items-center justify-center rounded-full border border-[#0f6e8c] bg-white px-7 py-3 text-sm font-semibold text-[#0f6e8c] transition hover:border-[#0c5c75] hover:bg-[#eff8ff]"
-                            >
-                                Learn More
-                            </a>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.7 }}
-                        className="rounded-[32px] bg-white p-8 shadow-[0_20px_80px_rgba(15,110,140,0.08)]"
-                    >
-                        <div className="rounded-[28px] bg-gradient-to-br from-[#0f6e8c] to-[#0c5c75] p-8 text-white shadow-lg">
-                            <div className="flex items-center gap-3">
-                                <img src={aceiotLogo} alt="ACEIoT logo" className="h-12 w-12 rounded-2xl bg-white/10 p-2" />
-                                <p className="text-sm uppercase tracking-[0.35em] text-cyan-100">ACEIoT Intelligence Hub</p>
-                            </div>
-                            <h2 className="mt-6 text-3xl font-semibold leading-tight">
-                                Learn with researchers, build for communities, and launch technologies that matter.
-                            </h2>
-                            <div className="mt-8 space-y-4 text-sm text-slate-100">
-                                <p>• Africa-focused IoT research with global impact.</p>
-                                <p>• Partnerships across government, industry, and civil society.</p>
-                                <p>• Practical labs and applied innovation support.</p>
-                            </div>
-                            <div className="mt-8 flex flex-wrap gap-3">
-                                <span className="rounded-full bg-white/15 px-4 py-2">Masters programs</span>
-                                <span className="rounded-full bg-white/15 px-4 py-2">PhD research</span>
-                                <span className="rounded-full bg-white/15 px-4 py-2">Short courses</span>
-                            </div>
-                            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                                <div className="rounded-[24px] bg-white/10 p-4">
-                                    <p className="text-xs uppercase tracking-[0.35em] text-slate-200">Powered by</p>
-                                    <img src={urLogo} alt="University of Rwanda logo" className="mt-4 h-10 object-contain" />
-                                </div>
-                                <div className="rounded-[24px] bg-white/10 p-4">
-                                    <p className="text-xs uppercase tracking-[0.35em] text-slate-200">Partner</p>
-                                    <img src={worldBankLogo} alt="World Bank logo" className="mt-4 h-10 object-contain" />
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
-
+        <div className="">
+            <Hero />
             <section id="background" className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
                 <div className="space-y-8">
                     <SectionHeader

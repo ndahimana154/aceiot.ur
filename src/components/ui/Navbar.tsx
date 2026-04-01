@@ -1,89 +1,98 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { Menu, X, Search } from 'lucide-react'
+import { Menu, X, Phone, User } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { navLinks } from '../../data/content'
 
-const navItemClasses = ({ isActive }: { isActive: boolean }) =>
-    `rounded-full px-4 py-2 text-sm font-medium transition ${isActive ? 'bg-[#0f6e8c] text-white' : 'text-slate-600 hover:bg-[#eaf8ff] hover:text-[#0f6e8c]'}`
-
 const aceiotLogo = new URL('../../assets/logo.png', import.meta.url).href
+
+const navItemClasses = ({ isActive }: { isActive: boolean }) =>
+    `px-3 py-2 text-sm font-semibold uppercase tracking-wide transition rounded-md
+   ${isActive
+        ? 'bg-[var(--green-400)] text-green-400'
+        : 'text-white hover:text-green-400'
+    }`
 
 export default function Navbar() {
     const [open, setOpen] = useState(false)
 
     return (
-        <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
-            <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-                <Link to="/" className="flex items-center gap-3 font-semibold text-slate-900">
-                    <img src={aceiotLogo} alt="ACEIoT logo" className="h-11 w-11 rounded-2xl object-contain" />
-                    <div>
-                        <p className="text-xs uppercase tracking-[0.35em] text-[#0f6e8c]">ACEIoT</p>
-                        <p className="text-sm font-semibold text-slate-900">University of Rwanda</p>
-                    </div>
-                </Link>
+        <header className="fixed inset-x-0 top-0 z-50">
 
-                <nav className="hidden items-center gap-1 lg:flex">
-                    {navLinks.map((link) => (
-                        <NavLink key={link.href} to={link.href} className={navItemClasses}>
-                            {link.label}
-                        </NavLink>
-                    ))}
-                </nav>
+            <div className="backdrop-blur-md bg-black/40 border-b border-white/10">
+                <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
-                <div className="hidden items-center gap-3 sm:flex">
-                    <div className="relative">
-                        <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                        <input
-                            type="search"
-                            placeholder="Search"
-                            className="w-48 rounded-full border border-slate-200 bg-slate-50 px-10 py-2 text-sm text-slate-700 outline-none transition focus:border-[#0f6e8c] focus:ring-2 focus:ring-[#0f6e8c]/20"
+                    <Link to="/" className="flex items-center gap-3">
+                        <img
+                            src={aceiotLogo}
+                            alt="logo"
+                            className="h-14 object-contain"
                         />
-                    </div>
-                </div>
+                    </Link>
 
-                <button
-                    type="button"
-                    onClick={() => setOpen((value) => !value)}
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 transition hover:border-slate-300 hover:text-slate-900 lg:hidden"
-                    aria-label="Toggle menu"
-                >
-                    {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                </button>
+                    <nav className="hidden lg:flex items-center gap-6">
+                        {navLinks.map((link) => (
+                            <NavLink key={link.href} to={link.href} className={navItemClasses}>
+                                {link.label}
+                            </NavLink>
+                        ))}
+                    </nav>
+
+                    <div className="hidden lg:flex items-center gap-4">
+                        <button className="flex items-center gap-2 rounded-lg border border-white/30 px-4 py-2 text-sm text-white hover:bg-white/10 transition">
+                            <Phone size={16} />
+                            GET INVOLVED
+                        </button>
+
+                        {/* <button className="flex items-center gap-2 rounded-lg bg-green-400 px-4 py-2 text-sm font-semibold text-black hover:bg-green-300 transition">
+                            <User size={16} />
+                            Join us
+                        </button> */}
+                    </div>
+
+                    {/* Mobile toggle */}
+                    <button
+                        onClick={() => setOpen(!open)}
+                        className="lg:hidden text-white"
+                    >
+                        {open ? <X /> : <Menu />}
+                    </button>
+                </div>
             </div>
 
+            {/* Mobile Menu */}
             <AnimatePresence>
-                {open ? (
+                {open && (
                     <motion.div
-                        initial={{ opacity: 0, y: -12 }}
+                        initial={{ opacity: 0, y: -15 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -12 }}
-                        className="border-t border-slate-200 bg-white px-4 pb-6 lg:hidden"
+                        exit={{ opacity: 0, y: -15 }}
+                        className="lg:hidden bg-black/90 backdrop-blur-md px-6 py-6 space-y-4"
                     >
-                        <div className="space-y-2 pt-4">
-                            {navLinks.map((link) => (
-                                <NavLink
-                                    key={link.href}
-                                    to={link.href}
-                                    onClick={() => setOpen(false)}
-                                    className={navItemClasses}
-                                >
-                                    {link.label}
-                                </NavLink>
-                            ))}
-                        </div>
-                        <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-3">
-                            <div className="flex items-center gap-3">
-                                <Search className="h-4 w-4 text-slate-400" />
-                                <input
-                                    type="search"
-                                    placeholder="Search site"
-                                    className="w-full bg-transparent text-sm text-slate-700 outline-none"
-                                />
-                            </div>
+                        {navLinks.map((link) => (
+                            <NavLink
+                                key={link.href}
+                                to={link.href}
+                                onClick={() => setOpen(false)}
+                                className="block text-white text-sm font-semibold uppercase"
+                            >
+                                {link.label}
+                            </NavLink>
+                        ))}
+
+                        <div className="pt-4 space-y-3">
+                            <button className="w-full flex items-center justify-center gap-2 border border-white/30 py-2 rounded-lg text-white">
+                                <Phone size={16} />
+                                GET INVOLVED
+                            </button>
+
+                            <button className="w-full flex items-center justify-center gap-2 bg-green-400 py-2 rounded-lg text-black font-semibold">
+                                <User size={16} />
+                                LOGIN / REGISTER
+                            </button>
                         </div>
                     </motion.div>
-                ) : null}
+                )}
             </AnimatePresence>
         </header>
     )

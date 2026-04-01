@@ -15,9 +15,9 @@ export default function SectionHeader({ label, title, description }: SectionHead
             transition={{ duration: 0.45 }}
             className="space-y-3"
         >
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0f6e8c]">{label}</p>
-            <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">{title}</h2>
-            <p className="max-w-2xl text-base leading-7 text-slate-600">{description}</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[color:var(--ace-primary)]">{label}</p>
+            <h2 className="text-3xl font-semibold text-[color:var(--ace-text)] sm:text-4xl">{title}</h2>
+            <p className="max-w-2xl text-base leading-7 text-[color:var(--ace-muted)]">{description}</p>
         </motion.div>
     )
 }
