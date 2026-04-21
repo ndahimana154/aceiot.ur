@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { Mail, MapPin, Phone, Globe2 } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import PageMeta from '../components/ui/PageMeta';
 import SectionHeader from '../components/ui/SectionHeader';
 import PageBanner from '../components/ui/PageBanner';
@@ -28,6 +30,25 @@ const contactDetails = [
 ];
 
 export default function Contact() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash !== '#get-involved') {
+      return;
+    }
+
+    const element = document.getElementById('get-involved');
+    if (!element) {
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const input = document.getElementById('name') as HTMLInputElement | null;
+      input?.focus();
+    });
+  }, [location.hash]);
+
   return (
     <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <PageMeta
@@ -71,7 +92,10 @@ export default function Contact() {
               })}
             </div>
 
-            <div className="rounded-[2rem] bg-slate-50 p-6 shadow-sm">
+            <div
+              id="get-involved"
+              className="rounded-[2rem] border-2 border-[#00AEEF]/20 bg-slate-50 p-6 shadow-sm"
+            >
               <div className="mb-6 overflow-hidden rounded-3xl border border-slate-200">
                 <img
                   src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=900&q=80"

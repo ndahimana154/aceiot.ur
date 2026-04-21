@@ -50,10 +50,13 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <button className="flex items-center gap-2 rounded-lg border border-white/30 px-4 py-2 text-sm text-white hover:bg-white/10 transition">
+            <Link
+              to="/contact#get-involved"
+              className="flex items-center gap-2 rounded-lg border border-white/30 px-4 py-2 text-sm text-white hover:bg-white/10 transition"
+            >
               <Phone size={16} />
               GET INVOLVED
-            </button>
+            </Link>
 
             {/* <button className="flex items-center gap-2 rounded-lg bg-[#00AEEF] px-4 py-2 text-sm font-semibold text-black hover:bg-green-300 transition">
                             <User size={16} />
@@ -92,10 +95,14 @@ export default function Navbar() {
             ))}
 
             <div className="pt-4 space-y-3">
-              <button className="w-full flex items-center justify-center gap-2 border border-white/30 py-2 rounded-lg text-white">
+              <Link
+                to="/contact#get-involved"
+                onClick={() => setOpen(false)}
+                className="w-full flex items-center justify-center gap-2 border border-white/30 py-2 rounded-lg text-white"
+              >
                 <Phone size={16} />
                 GET INVOLVED
-              </button>
+              </Link>
 
               <button className="w-full flex items-center justify-center gap-2 bg-[#00AEEF] py-2 rounded-lg text-black font-semibold">
                 <User size={16} />
