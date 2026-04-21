@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://aceiot.ur.ac.rw/</loc>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://aceiot.ur.ac.rw/about</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://aceiot.ur.ac.rw/programs</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://aceiot.ur.ac.rw/admissions</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://aceiot.ur.ac.rw/research</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://aceiot.ur.ac.rw/faculty</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://aceiot.ur.ac.rw/news</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://aceiot.ur.ac.rw/contact</loc>
+        <priority>0.80</priority>
+    </url>
+</urlset>
