@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 const urLogo = new URL('../../assets/urlogo2019.png', import.meta.url).href;
 
@@ -9,7 +9,7 @@ const footerLinks = [
   ['Programs', '/programs'],
   ['Admissions', '/admissions'],
   ['Research', '/research'],
-  ['Our Community', '/faculty'],
+  ['Staff', '/staff'],
   ['News', '/news'],
   ['Contact', '/contact'],
 ];
@@ -23,7 +23,7 @@ const extraLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white py-10">
+    <footer className="border-t border-[color:var(--ace-border)] bg-[color:var(--ace-surface)] py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="max-w-sm space-y-4">
@@ -34,27 +34,26 @@ export default function Footer() {
                 className="h-11 w-11 rounded-2xl object-contain"
               />
               <div>
-                <p className="font-semibold text-[#0f6e8c]">ACEIoT</p>
-                <p className="text-sm text-slate-500">University of Rwanda</p>
+                <p className="font-semibold text-[color:var(--ace-primary)]">ACEIoT</p>
+                <p className="text-sm text-[color:var(--ace-muted)]">University of Rwanda</p>
               </div>
             </div>
-            <p className="text-sm leading-6 text-slate-600">
-              Building research capacity and academic excellence through
-              technology, partnerships, and innovation.
+            <p className="text-sm leading-6 text-[color:var(--ace-muted)]">
+              Postgraduate study, research, and partnerships in ICT and connected systems.
             </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[color:var(--ace-muted)]">
                 Explore
               </p>
-              <ul className="space-y-2 text-sm text-slate-600">
+              <ul className="space-y-2 text-sm text-[color:var(--ace-muted)]">
                 {footerLinks.map(([label, href]) => (
                   <li key={href}>
                     <Link
                       to={href}
-                      className="hover:text-slate-900 hover:underline"
+                      className="transition hover:text-[color:var(--ace-text)] hover:underline"
                     >
                       {label}
                     </Link>
@@ -64,15 +63,15 @@ export default function Footer() {
             </div>
 
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[color:var(--ace-muted)]">
                 More
               </p>
-              <ul className="space-y-2 text-sm text-slate-600">
+              <ul className="space-y-2 text-sm text-[color:var(--ace-muted)]">
                 {extraLinks.map(([label, href]) => (
                   <li key={href}>
                     <Link
                       to={href}
-                      className="hover:text-slate-900 hover:underline"
+                      className="transition hover:text-[color:var(--ace-text)] hover:underline"
                     >
                       {label}
                     </Link>
@@ -82,28 +81,24 @@ export default function Footer() {
             </div>
 
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[color:var(--ace-muted)]">
                 Contact
               </p>
-              <ul className="space-y-3 text-sm text-slate-600">
-                <li className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-slate-400" />
-                  Kigali, Rwanda
+              <ul className="space-y-3 text-sm text-[color:var(--ace-muted)]">
+                <li className="flex items-start gap-2">
+                  <MapPin className="mt-0.5 h-4 w-4 text-[color:var(--ace-primary)]" />
+                  KN 75 Street, Nyarugenge, Kigali
                 </li>
                 <li className="flex items-center gap-2">
-                  <Mail className="h-4 w-4 text-slate-400" />
-                  info@aceiot.ur.ac.rw
-                </li>
-                <li className="flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-slate-400" />
-                  +250 788 123 456
+                  <Mail className="h-4 w-4 text-[color:var(--ace-primary)]" />
+                  info@ur.ac.rw
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div className="mt-10 border-t border-slate-200 py-6 text-center text-sm text-slate-500">
+      <div className="mt-10 border-t border-[color:var(--ace-border)] py-6 text-center text-sm text-[color:var(--ace-muted)]">
         © {new Date().getFullYear()} ACEIoT · University of Rwanda. All rights
         reserved.
       </div>

@@ -11,30 +11,30 @@ const carouselImages = [
   {
     url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&h=900&fit=crop',
     alt: 'IoT Lab Research',
-    title: 'Cutting-edge IoT Research',
+    title: 'Focused postgraduate study',
     description:
-      'State-of-the-art laboratories equipped with the latest IoT technology for groundbreaking research',
+      'A clear pathway into applied research, advanced labs, and regional collaboration.',
   },
   {
     url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&h=900&fit=crop',
     alt: 'Students Collaborating',
-    title: 'Collaborative Learning Environment',
+    title: 'Research with regional relevance',
     description:
-      'Join a diverse community of passionate researchers and innovators from across Africa',
+      'Study and build solutions shaped by Rwanda’s digital priorities and public needs.',
   },
   {
     url: 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1600&h=900&fit=crop',
     alt: 'Advanced Technology',
-    title: 'Advanced Technology Labs',
+    title: 'Modern labs and practical work',
     description:
-      'Hands-on experience with cutting-edge equipment and industry-standard tools',
+      'Learn through supervised projects, technical workshops, and applied systems work.',
   },
   {
     url: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&h=900&fit=crop',
     alt: 'African Innovation',
-    title: 'African Excellence',
+    title: 'Partnerships that support impact',
     description:
-      'Solving local challenges with global impact through innovative IoT solutions',
+      'Collaborate with universities, institutions, and partners across Africa and beyond.',
   },
 ];
 
@@ -114,7 +114,7 @@ const Hero = () => {
                 alt={currentSlide.alt}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-900/70 to-[#020617]/85" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[rgba(6,25,35,0.92)] via-[rgba(8,38,52,0.72)] to-[rgba(5,16,24,0.88)]" />
             </motion.div>
           </AnimatePresence>
         </div>
@@ -153,8 +153,8 @@ const Hero = () => {
               key={index}
               onClick={() => goToSlide(index)}
               className={`transition-all duration-300 rounded-full ${currentIndex === index
-                  ? 'w-4 sm:w-6 md:w-8 h-1.5 sm:h-2 bg-[#00AEEF]'
-                  : 'w-1.5 sm:w-2 h-1.5 sm:h-2 bg-slate-400 hover:bg-slate-600'
+                ? 'h-1.5 w-4 bg-[color:var(--ace-secondary)] sm:h-2 sm:w-6 md:w-8'
+                : 'w-1.5 sm:w-2 h-1.5 sm:h-2 bg-slate-400 hover:bg-slate-600'
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -172,11 +172,12 @@ const Hero = () => {
                 transition={{ duration: 0.5, ease: 'easeOut' }}
                 className="mb-4 sm:mb-6"
               >
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.36em] text-[color:var(--ace-secondary)] sm:text-sm">
+                  University of Rwanda
+                </p>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-tight drop-shadow-[0_8px_24px_rgba(2,6,23,0.6)]">
-                  <span className="block">
-                    ACEIoT at the University of Rwanda:
-                  </span>
-                  <span className="block text-[#00AEEF] mt-2">
+                  <span className="block">ACEIoT</span>
+                  <span className="mt-2 block text-[color:var(--ace-primary)]">
                     {currentSlide.title}
                   </span>
                 </h1>
@@ -201,11 +202,9 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-4 sm:mt-6 text-xs sm:text-sm md:text-base text-slate-200 max-w-2xl mx-auto"
+              className="mt-4 max-w-2xl mx-auto text-xs text-slate-200 sm:mt-6 sm:text-sm md:text-base"
             >
-              Join our interdisciplinary Masters, PhD, and professional ICT
-              programs focused on intelligent systems, digital infrastructure,
-              and sustainable innovation.
+              Educate, learn, and research in Rwanda through a concise portfolio of MSc, PhD, and executive ICT programmes.
             </motion.p>
 
             <motion.div
@@ -216,9 +215,9 @@ const Hero = () => {
             >
               <Link
                 to="/programs"
-                className="group inline-flex items-center justify-center rounded-full bg-[#00AEEF] hover:bg-sky-400 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5 text-sm sm:text-base font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="group inline-flex items-center justify-center rounded-full bg-[color:var(--ace-primary)] px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[color:var(--ace-primary-dark)] sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-3.5"
               >
-                Explore Programs
+                Explore Programmes
                 <svg
                   className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform"
                   fill="none"
@@ -235,7 +234,7 @@ const Hero = () => {
               </Link>
               <a
                 href="#background"
-                className="inline-flex items-center justify-center rounded-full border-2 border-sky-200/70 bg-slate-950/30 backdrop-blur-sm px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5 text-sm sm:text-base font-semibold text-sky-100 hover:bg-slate-900/50 transition-all duration-300"
+                className="inline-flex items-center justify-center rounded-full border-2 border-[color:var(--ace-secondary)]/70 bg-slate-950/30 px-5 py-2.5 text-sm font-semibold text-[#f8f1dc] transition-all duration-300 hover:bg-slate-900/50 sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-3.5"
               >
                 Learn More
               </a>
@@ -246,10 +245,10 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-10 sm:mt-12 md:mt-16 pt-6 sm:pt-8 border-t border-slate-300/20 flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-12 backdrop-blur-sm bg-slate-900/35 rounded-xl p-4 sm:p-6 mx-2 sm:mx-4"
+              className="mx-2 mt-10 flex flex-wrap items-center justify-center gap-6 rounded-xl border border-white/10 bg-slate-900/35 p-4 pt-6 backdrop-blur-sm sm:mx-4 sm:mt-12 sm:gap-8 sm:p-6 sm:pt-8 md:mt-16 md:gap-12"
             >
               <div className="flex flex-col items-center gap-1 sm:gap-2 flex-1 min-w-[80px] sm:min-w-[100px]">
-                <p className="text-[10px] sm:text-xs uppercase tracking-wider text-slate-300">
+                <p className="text-[10px] uppercase tracking-wider text-slate-300 sm:text-xs">
                   Powered by
                 </p>
                 <img
@@ -259,7 +258,7 @@ const Hero = () => {
                 />
               </div>
               <div className="flex flex-col items-center gap-1 sm:gap-2 flex-1 min-w-[80px] sm:min-w-[100px]">
-                <p className="text-[10px] sm:text-xs uppercase tracking-wider text-slate-300">
+                <p className="text-[10px] uppercase tracking-wider text-slate-300 sm:text-xs">
                   Partner
                 </p>
                 <img
@@ -269,7 +268,7 @@ const Hero = () => {
                 />
               </div>
               <div className="flex flex-col items-center gap-1 sm:gap-2 flex-1 min-w-[80px] sm:min-w-[100px]">
-                <p className="text-[10px] sm:text-xs uppercase tracking-wider text-slate-300">
+                <p className="text-[10px] uppercase tracking-wider text-slate-300 sm:text-xs">
                   ACEIoT Hub
                 </p>
                 <img

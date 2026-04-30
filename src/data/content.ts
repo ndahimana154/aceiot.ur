@@ -8,7 +8,7 @@ export const navLinks = [
     { label: 'Programs', href: '/programs' },
     { label: 'Admissions', href: '/admissions' },
     { label: 'Research', href: '/research' },
-    { label: 'Our Community', href: '/faculty' },
+    { label: 'Staff', href: '/staff' },
     { label: 'News', href: '/news' },
     { label: 'Contact', href: '/contact' },
 ]
@@ -24,134 +24,118 @@ export const secondaryLinks = [
 
 export const programCards = [
     {
-        title: 'Masters in ICT',
-        description: 'Specialized training for next-generation IoT professionals and applied researchers.',
+        title: 'MSc in ICT',
+        description: 'Postgraduate study in connected systems, data, and digital infrastructure.',
         imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80',
         icon: GraduationCap,
-        accent: 'bg-gradient-to-br from-sky-50 to-sky-100 text-sky-700',
+        accent: 'bg-[color:var(--ace-primary-soft)] text-[color:var(--ace-primary)]',
         subPrograms: [
             { name: 'IoT & Embedded Systems', duration: '2 years' },
             { name: 'Data Science & AI', duration: '2 years' },
             { name: 'Cybersecurity', duration: '2 years' },
-            { name: 'Cloud & Edge Computing', duration: '2 years' },
+            { name: 'Digital Infrastructure', duration: '2 years' },
         ],
-        ctaText: 'View master programs'
+        ctaText: 'View MSc programs'
     },
     {
         title: 'PhD in ICT',
-        description: 'Advanced research programs with an emphasis on innovation, policy, and sustainability.',
+        description: 'Research-led doctoral study focused on high-impact ICT challenges in the region.',
         imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80',
         icon: Award,
-        accent: 'bg-gradient-to-br from-amber-50 to-amber-100 text-amber-700',
+        accent: 'bg-[color:var(--ace-secondary-soft)] text-[color:var(--ace-secondary)]',
         subPrograms: [
             { name: 'Internet of Things', duration: '3-5 years' },
             { name: 'Artificial Intelligence', duration: '3-5 years' },
             { name: 'Wireless Communications', duration: '3-5 years' },
-            { name: 'Green ICT', duration: '3-5 years' },
+            { name: 'Sustainable ICT', duration: '3-5 years' },
         ],
         ctaText: 'View PhD tracks'
     },
     {
-        title: 'Professional ICT Programs',
-        description: 'Short courses and executive training for industry leaders and government partners.',
+        title: 'Executive Courses',
+        description: 'Short, focused programmes for working professionals and institutional partners.',
         imageUrl: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80',
         icon: Globe2,
-        accent: 'bg-gradient-to-br from-indigo-50 to-indigo-100 text-indigo-700',
+        accent: 'bg-[rgba(19,49,63,0.08)] text-[color:var(--ace-text)]',
         subPrograms: [
             { name: 'IoT Architecture', duration: '8 weeks' },
-            { name: 'Cloud Certification', duration: '12 weeks' },
-            { name: 'Executive Leadership', duration: '4 days' },
-            { name: 'Custom Enterprise Training', duration: 'Flexible' },
+            { name: 'Cloud Platforms', duration: '12 weeks' },
+            { name: 'Leadership for ICT', duration: '4 days' },
+            { name: 'Custom Cohorts', duration: 'Flexible' },
         ],
-        ctaText: 'View professional programs'
+        ctaText: 'View short courses'
     }
 ]
 export const graduateStats = [
-    { label: 'PhD Graduates', value: 28, icon: Award, accent: 'from-cyan-500 to-sky-700' },
-    { label: 'MSc Graduates', value: 142, icon: GraduationCap, accent: 'from-amber-400 to-yellow-500' },
-    { label: 'Rwandan Graduates', value: 125, icon: ShieldCheck, accent: 'from-slate-500 to-slate-700' },
-    { label: 'International Graduates', value: 45, icon: Globe2, accent: 'from-violet-500 to-fuchsia-600' },
-    { label: 'Female Graduates', value: 78, icon: Clock3, accent: 'from-pink-500 to-rose-600' },
-    { label: 'Male Graduates', value: 89, icon: Search, accent: 'from-sky-500 to-cyan-600' },
+    { label: 'PhD Graduates', value: 28, icon: Award, accent: 'linear-gradient(135deg, var(--ace-primary), var(--ace-primary-dark))' },
+    { label: 'MSc Graduates', value: 142, icon: GraduationCap, accent: 'linear-gradient(135deg, var(--ace-secondary), #c6a663)' },
+    { label: 'Rwandan Graduates', value: 125, icon: ShieldCheck, accent: 'linear-gradient(135deg, var(--ace-primary-dark), var(--ace-primary))' },
+    { label: 'International Graduates', value: 45, icon: Globe2, accent: 'linear-gradient(135deg, #5b7280, #2e4958)' },
+    { label: 'Female Graduates', value: 78, icon: Clock3, accent: 'linear-gradient(135deg, var(--ace-secondary), #dfbf79)' },
+    { label: 'Male Graduates', value: 89, icon: Search, accent: 'linear-gradient(135deg, var(--ace-primary), #3d89a7)' },
 ]
 
 export const ongoingStats = [
-    { label: 'PhD Students', value: 34, icon: Award, accent: 'from-cyan-500 to-sky-700' },
-    { label: 'MSc Students', value: 186, icon: GraduationCap, accent: 'from-amber-400 to-yellow-500' },
-    { label: 'Rwandan Students', value: 164, icon: ShieldCheck, accent: 'from-slate-500 to-slate-700' },
-    { label: 'International Students', value: 56, icon: Globe2, accent: 'from-violet-500 to-fuchsia-600' },
-    { label: 'Female Students', value: 102, icon: Clock3, accent: 'from-pink-500 to-rose-600' },
-    { label: 'Male Students', value: 118, icon: Search, accent: 'from-sky-500 to-cyan-600' },
+    { label: 'PhD Students', value: 34, icon: Award, accent: 'linear-gradient(135deg, var(--ace-primary), var(--ace-primary-dark))' },
+    { label: 'MSc Students', value: 186, icon: GraduationCap, accent: 'linear-gradient(135deg, var(--ace-secondary), #c6a663)' },
+    { label: 'Rwandan Students', value: 164, icon: ShieldCheck, accent: 'linear-gradient(135deg, var(--ace-primary-dark), var(--ace-primary))' },
+    { label: 'International Students', value: 56, icon: Globe2, accent: 'linear-gradient(135deg, #5b7280, #2e4958)' },
+    { label: 'Female Students', value: 102, icon: Clock3, accent: 'linear-gradient(135deg, var(--ace-secondary), #dfbf79)' },
+    { label: 'Male Students', value: 118, icon: Search, accent: 'linear-gradient(135deg, var(--ace-primary), #3d89a7)' },
 ]
 
 export const newsList = [
     {
-        slug: 'smart-campus-launch',
-        title: 'ACEIoT Launches Smart Campus Research Hub',
-        summary: 'A new research hub is open to accelerate smart-city projects across Rwanda and the region.',
+        slug: 'graduate-research-call',
+        title: 'Graduate research call opens for the next intake',
+        summary: 'Applicants can now submit proposals in intelligent systems, networks, and digital services.',
         category: 'Research',
-        date: 'March 20, 2026',
+        date: 'April 18, 2026',
         image: '../assets/nnn.jpg',
     },
     {
-        slug: 'world-bank-partnership',
-        title: 'World Bank Supports Next Cohort of ICT Leaders',
-        summary: 'A three-year project will expand PhD and MSc scholarships for high-impact innovation.',
+        slug: 'industry-series-launch',
+        title: 'Industry Connect series starts this term',
+        summary: 'A new programme links postgraduate study with public-sector and industry practice.',
         category: 'Partnership',
-        date: 'February 15, 2026',
-    },
-    {
-        slug: 'women-in-iot',
-        title: 'Women in IoT: A New Fellowship Program',
-        summary: 'The center launches a fellowship to boost female leadership in Internet-of-Things research.',
-        category: 'Community',
-        date: 'January 28, 2026',
+        date: 'April 2, 2026',
     },
     {
         slug: 'research-symposium-2026',
-        title: 'ACEIoT Research Symposium 2026',
-        summary: 'Join the annual symposium showcasing student projects in AI, sensors, and data systems.',
+        title: 'Research symposium to showcase student work',
+        summary: 'The annual symposium will feature short presentations, demos, and partner sessions.',
         category: 'Events',
-        date: 'April 10, 2026',
+        date: 'March 21, 2026',
     },
 ]
 
 export const eventList = [
     {
-        title: 'IoT Systems Workshop',
+        title: 'Graduate research clinic',
         date: 'May 12, 2026',
-        description: 'Hands-on sessions for sensor networks, edge analytics and smart infrastructure.',
+        description: 'A short advisory session for MSc and PhD applicants preparing proposals.',
     },
     {
-        title: 'Youth Innovation Challenge',
+        title: 'Industry Connect seminar',
         date: 'June 1, 2026',
-        description: 'A hackathon for students building practical solutions in health, energy, and agriculture.',
+        description: 'Guest speakers discuss digital infrastructure, public systems, and applied research.',
     },
     {
-        title: 'International Research Forum',
+        title: 'ACEIoT annual symposium',
         date: 'July 22, 2026',
-        description: 'Panels with global partners on digital transformation and academic collaboration.',
+        description: 'A concise programme of student papers, prototypes, and research networking.',
     },
 ]
 
 export const announcements = [
     {
-        title: 'Application deadline extended',
-        note: 'Master and PhD applicants now have until 30 June 2026 to submit their portfolios.',
+        title: 'Applications close on 30 June 2026',
+        note: 'MSc and PhD applicants should submit transcripts, references, and a short statement of interest.',
         important: true,
     },
     {
-        title: 'Application deadline extended',
-        note: 'Master and PhD applicants now have until 30 June 2026 to submit their portfolios.',
-        important: true,
-    },
-    {
-        title: 'Scholarship information session',
-        note: 'Join the online briefing on World Bank funded scholarships for ACEIoT programs.',
-    },
-    {
-        title: 'New lab equipment arrival',
-        note: 'The new edge-computing lab is now available for student projects and faculty research.',
+        title: 'Scholarship briefing scheduled for 16 May',
+        note: 'An online session will outline available funding routes and the required application documents.',
     },
 ]
 
@@ -171,33 +155,33 @@ export const partnerLogos = [
 export const staffList = [
     {
         name: 'Dr. Amina Niyonzima',
-        role: 'Director, Research & Innovation',
-        focus: 'Smart systems, policy, mentorship',
+        role: 'Director, Research and Innovation',
+        focus: 'Applied systems research and postgraduate supervision.',
     },
     {
         name: 'Prof. Jean-Claude Habimana',
         role: 'PhD Program Coordinator',
-        focus: 'IoT architecture and sustainable deployment',
+        focus: 'Doctoral pathways, research quality, and academic advising.',
     },
     {
         name: 'Ms. Claudine Uwera',
         role: 'Program Manager',
-        focus: 'Industry partnerships and student success',
+        focus: 'Admissions coordination, partnerships, and student support.',
     },
 ]
 
 export const researchHighlights = [
     {
-        title: 'Sensor networks for precision agriculture',
-        summary: 'Low-cost IoT systems that improve yield, water use and community resilience.',
+        title: 'Connected agriculture systems',
+        summary: 'Practical sensing tools for water use, crop monitoring, and resilient field operations.',
     },
     {
-        title: 'Edge AI for health monitoring',
-        summary: 'Distributed analytics for real-time patient and environmental sensing.',
+        title: 'Edge intelligence for health services',
+        summary: 'Distributed models for monitoring, triage support, and reliable local data processing.',
     },
     {
-        title: 'Urban infrastructure optimization',
-        summary: 'Smart transport, energy, and security solutions powered by integrated data.',
+        title: 'Digital infrastructure and public systems',
+        summary: 'Research on networks, service delivery, and intelligent public infrastructure.',
     },
 ]
 
