@@ -15,11 +15,11 @@ export default function SectionHeader({ label, title, description }: SectionHead
             transition={{ duration: 0.45 }}
             className="space-y-3"
         >
-            <p className="inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.25em] text-[#00AEEF]">
+            <p className="inline-flex items-center gap-2 rounded-full bg-[color:var(--ace-primary-soft)] px-3 py-1 text-xs font-bold uppercase tracking-[0.25em] text-[color:var(--ace-primary)]">
                 {label}
             </p>
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl mt-4">{title}</h2>
-            <p className="max-w-2xl text-base leading-relaxed text-slate-600 mt-2">{description}</p>
+            <h2 className="mt-4 text-2xl font-bold tracking-tight text-[color:var(--ace-text)] md:text-3xl">{title}</h2>
+            <p className="mt-2 max-w-2xl text-base leading-relaxed text-[color:var(--ace-muted)]">{description}</p>
         </motion.div>
     )
 }
