@@ -2,7 +2,7 @@
 #
 # See https://github.com/quarksgroup/andasy-cli for information about how to use this file.
 
-app_name = "uraceiot"
+app_name = "aceiot"
 
 app {
 
