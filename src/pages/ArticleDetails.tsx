@@ -4,12 +4,11 @@ import { ArrowLeft } from 'lucide-react';
 import PageMeta from '../components/ui/PageMeta';
 import SectionHeader from '../components/ui/SectionHeader';
 import PageBanner from '../components/ui/PageBanner';
-import { useAsyncData } from '../hooks/useAsyncData';
-import { newsList } from '../data/content';
+import { useSpipNews } from '../hooks/useSpipNews';
 
 export default function ArticleDetails() {
   const { slug } = useParams();
-  const { data, loading } = useAsyncData(newsList);
+  const { data, loading } = useSpipNews();
 
   const article = useMemo(
     () => data?.find((item) => item.slug === slug) ?? null,

@@ -1,0 +1,80 @@
+<INCLURE{fond=inc-head, titre=#NOM_RUBRIQUE} />
+<INCLURE{fond=inc-nav} />
+
+<main class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+
+  <!-- Banner -->
+  <div class="relative overflow-hidden rounded-[2.5rem] mb-12" style="min-height:220px">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80"
+         alt="" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(6,25,35,0.85),rgba(8,38,52,0.6))"></div>
+    <div class="relative z-10 p-8 sm:p-12 flex flex-col justify-end h-full" style="min-height:220px">
+      <span class="ace-section-label" style="background:rgba(255,255,255,0.15);color:#fff">News</span>
+      <h1 class="mt-4 text-2xl sm:text-3xl font-semibold text-white leading-tight">Stories and updates shaping ACEIoT progress.</h1>
+      <p class="mt-2 text-sm text-slate-200">Discover announcements, partnerships, and research milestones from our community and collaborators.</p>
+    </div>
+  </div>
+
+  <!-- Search (client-side) -->
+  <div class="rounded-3xl border p-4 mb-8 flex items-center gap-3" style="border-color:var(--ace-border);background:var(--ace-surface)">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" style="color:var(--ace-muted)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/></svg>
+    <input id="news-search" type="text" placeholder="Search news articles…"
+           class="w-full bg-transparent text-sm outline-none" style="color:var(--ace-text)" />
+  </div>
+
+  <!-- Articles grid -->
+  <div id="news-grid" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+    <BOUCLE_articles(ARTICLES){id_rubrique}{par date}{inverse}>
+    <article class="news-item group rounded-[28px] border bg-white p-6 shadow-sm transition hover:shadow-lg hover:-translate-y-1"
+             style="border-color:var(--ace-border)"
+             data-title="[(#TITRE|strtolower)]"
+             data-summary="[(#DESCRIPTIF|strtolower)]">
+
+      <div class="mb-4 h-44 overflow-hidden rounded-3xl">
+        [(#LOGO_ARTICLE_RUBRIQUE|image_reduire{800,450}|image_responsive)]
+        <DEFAUT>
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80" alt="[(#TITRE)]" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </DEFAUT>
+      </div>
+
+      <div class="space-y-2">
+        <div class="flex items-center justify-between text-xs uppercase tracking-widest" style="color:var(--ace-muted)">
+          <span style="color:var(--ace-primary)"><BOUCLE_cat(RUBRIQUES){id_rubrique}>[(#NOM_RUBRIQUE)]</BOUCLE_cat></span>
+          <span>[(#DATE|affdate)]</span>
+        </div>
+        <h3 class="text-sm font-semibold leading-6" style="color:var(--ace-text)">[(#TITRE)]</h3>
+        <p class="text-xs leading-5" style="color:var(--ace-muted)">[(#DESCRIPTIF)]</p>
+        <a href="[(#URL_ARTICLE)]" class="inline-flex items-center gap-1 text-xs font-semibold mt-2" style="color:var(--ace-primary)">Read more →</a>
+      </div>
+    </article>
+    </BOUCLE_articles>
+
+  </div>
+
+  <p id="no-results" class="hidden text-center text-sm mt-12" style="color:var(--ace-muted)">No articles found matching your search.</p>
+
+</main>
+
+<script>
+(function () {
+  var input = document.getElementById('news-search');
+  var items = document.querySelectorAll('.news-item');
+  var noRes = document.getElementById('no-results');
+
+  input.addEventListener('input', function () {
+    var q = input.value.toLowerCase();
+    var count = 0;
+    items.forEach(function (el) {
+      var match = !q
+        || el.dataset.title.includes(q)
+        || el.dataset.summary.includes(q);
+      el.style.display = match ? '' : 'none';
+      if (match) count++;
+    });
+    noRes.classList.toggle('hidden', count > 0);
+  });
+}());
+</script>
+
+<INCLURE{fond=inc-footer} />

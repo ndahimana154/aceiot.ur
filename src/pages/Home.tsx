@@ -11,7 +11,6 @@ import {
     programCards,
     graduateStats,
     ongoingStats,
-    newsList,
     eventList,
     announcements,
     partnerLogos,
@@ -19,9 +18,13 @@ import {
     researchHighlights,
 } from '../data/content'
 import Hero from '../components/ui/Hero'
+import SpipHealthCheck from '../components/SpipHealthCheck'
+import { useSpipNews } from '../hooks/useSpipNews'
 
 
 export default function Home() {
+    const { data: newsItems } = useSpipNews()
+
     return (
         <>
             <PageMeta
@@ -31,6 +34,8 @@ export default function Home() {
             <Hero />
             <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="space-y-16 py-8">
+                    <SpipHealthCheck />
+
                     <section id="background" className="py-8 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
                         <div className="space-y-8">
                             <SectionHeader
@@ -153,7 +158,7 @@ export default function Home() {
                             </Link>
                         </div>
                         <div className="grid gap-6 lg:grid-cols-3">
-                            {newsList.slice(0, 3).map((item) => (
+                            {newsItems.slice(0, 3).map((item) => (
                                 <NewsCard key={item.slug} title={item.title} summary={item.summary} date={item.date} category={item.category} href={`/news/${item.slug}`} />
                             ))}
                         </div>

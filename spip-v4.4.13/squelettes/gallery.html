@@ -1,0 +1,138 @@
+<INCLURE{fond=inc-head, titre=Gallery} />
+<INCLURE{fond=inc-nav} />
+
+<main class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+  <div class="space-y-16">
+
+    <!-- Banner -->
+    <div class="relative overflow-hidden rounded-[2.5rem]" style="min-height:220px">
+      <img src="https://images.unsplash.com/photo-1462396881884-de2c07cb95ed?auto=format&fit=crop&w=1600&q=80"
+           alt="" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(6,25,35,0.85),rgba(8,38,52,0.6))"></div>
+      <div class="relative z-10 p-8 sm:p-12 flex flex-col justify-end" style="min-height:220px">
+        <span class="ace-section-label" style="background:rgba(255,255,255,0.15);color:#fff">Gallery</span>
+        <h1 class="mt-4 text-2xl sm:text-3xl font-semibold text-white leading-tight">Life at ACEIoT.</h1>
+        <p class="mt-2 text-sm text-slate-200">Students, labs, events, and campus moments from the ACEIoT community.</p>
+      </div>
+    </div>
+
+    <!-- Filter tabs -->
+    <section class="space-y-8">
+      <div class="flex gap-3 flex-wrap" id="gallery-filters">
+        <button onclick="filterGallery(this,'all')" data-filter="all"
+                class="gallery-tab rounded-full px-5 py-2 text-sm font-semibold transition"
+                style="background:var(--ace-primary);color:#fff">All</button>
+        <button onclick="filterGallery(this,'labs')" data-filter="labs"
+                class="gallery-tab rounded-full px-5 py-2 text-sm font-semibold transition"
+                style="background:var(--ace-card);color:var(--ace-text)">Labs</button>
+        <button onclick="filterGallery(this,'events')" data-filter="events"
+                class="gallery-tab rounded-full px-5 py-2 text-sm font-semibold transition"
+                style="background:var(--ace-card);color:var(--ace-text)">Events</button>
+        <button onclick="filterGallery(this,'students')" data-filter="students"
+                class="gallery-tab rounded-full px-5 py-2 text-sm font-semibold transition"
+                style="background:var(--ace-card);color:var(--ace-text)">Students</button>
+        <button onclick="filterGallery(this,'campus')" data-filter="campus"
+                class="gallery-tab rounded-full px-5 py-2 text-sm font-semibold transition"
+                style="background:var(--ace-card);color:var(--ace-text)">Campus</button>
+      </div>
+
+      <!-- Masonry grid -->
+      <div class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4" id="gallery-grid">
+
+        <div class="gallery-item break-inside-avoid overflow-hidden rounded-[1.5rem]" data-cat="labs">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80"
+               alt="IoT lab hardware" class="w-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer" onclick="openLightbox(this)" />
+        </div>
+        <div class="gallery-item break-inside-avoid overflow-hidden rounded-[1.5rem]" data-cat="students">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=500&q=80"
+               alt="Students collaborating" class="w-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer" onclick="openLightbox(this)" />
+        </div>
+        <div class="gallery-item break-inside-avoid overflow-hidden rounded-[1.5rem]" data-cat="events">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=500&q=80"
+               alt="ACEIoT symposium" class="w-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer" onclick="openLightbox(this)" />
+        </div>
+        <div class="gallery-item break-inside-avoid overflow-hidden rounded-[1.5rem]" data-cat="labs">
+          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=500&q=80"
+               alt="AI workstation" class="w-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer" onclick="openLightbox(this)" />
+        </div>
+        <div class="gallery-item break-inside-avoid overflow-hidden rounded-[1.5rem]" data-cat="campus">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=500&q=80"
+               alt="University campus" class="w-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer" onclick="openLightbox(this)" />
+        </div>
+        <div class="gallery-item break-inside-avoid overflow-hidden rounded-[1.5rem]" data-cat="students">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500&q=80"
+               alt="Research team" class="w-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer" onclick="openLightbox(this)" />
+        </div>
+        <div class="gallery-item break-inside-avoid overflow-hidden rounded-[1.5rem]" data-cat="events">
+          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=500&q=80"
+               alt="Industry seminar" class="w-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer" onclick="openLightbox(this)" />
+        </div>
+        <div class="gallery-item break-inside-avoid overflow-hidden rounded-[1.5rem]" data-cat="campus">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=500&q=80"
+               alt="Collaboration space" class="w-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer" onclick="openLightbox(this)" />
+        </div>
+        <div class="gallery-item break-inside-avoid overflow-hidden rounded-[1.5rem]" data-cat="labs">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=500&q=80"
+               alt="Network lab" class="w-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer" onclick="openLightbox(this)" />
+        </div>
+        <div class="gallery-item break-inside-avoid overflow-hidden rounded-[1.5rem]" data-cat="students">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=500&q=80"
+               alt="Student at work" class="w-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer" onclick="openLightbox(this)" />
+        </div>
+        <div class="gallery-item break-inside-avoid overflow-hidden rounded-[1.5rem]" data-cat="events">
+          <img src="https://images.unsplash.com/photo-1576158114254-3ba81558b87a?auto=format&fit=crop&w=500&q=80"
+               alt="Graduation" class="w-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer" onclick="openLightbox(this)" />
+        </div>
+        <div class="gallery-item break-inside-avoid overflow-hidden rounded-[1.5rem]" data-cat="campus">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=500&q=80"
+               alt="Kigali campus" class="w-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer" onclick="openLightbox(this)" />
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[9999] hidden items-center justify-center" style="background:rgba(0,0,0,0.88)">
+  <button onclick="closeLightbox()" class="absolute top-4 right-6 text-white text-3xl font-bold leading-none">&#x2715;</button>
+  <img id="lightbox-img" src="" alt="" class="max-w-[90vw] max-h-[90vh] rounded-2xl shadow-2xl" />
+</div>
+
+<script>
+function filterGallery(btn, cat) {
+  document.querySelectorAll('.gallery-tab').forEach(function (b) {
+    b.style.background = 'var(--ace-card)';
+    b.style.color = 'var(--ace-text)';
+  });
+  btn.style.background = 'var(--ace-primary)';
+  btn.style.color = '#fff';
+
+  document.querySelectorAll('.gallery-item').forEach(function (el) {
+    el.style.display = (cat === 'all' || el.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+function openLightbox(img) {
+  var lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = img.src;
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.getElementById('lightbox').addEventListener('click', function (e) {
+  if (e.target === this) closeLightbox();
+});
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
+<INCLURE{fond=inc-footer} />

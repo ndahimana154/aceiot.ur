@@ -1,0 +1,389 @@
+<INCLURE{fond=inc-head, titre=Home} />
+<INCLURE{fond=inc-nav} />
+
+<!-- ===================== HERO ===================== -->
+<section class="relative w-screen min-h-screen overflow-hidden -mt-[88px]">
+  <div class="absolute inset-0">
+    <img
+      id="hero-img"
+      src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&h=900&fit=crop"
+      alt="ACEIoT Hero"
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(6,25,35,0.92) 0%,rgba(8,38,52,0.72) 50%,rgba(5,16,24,0.88) 100%)"></div>
+  </div>
+
+  <div class="relative z-10 flex flex-col items-start justify-center min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
+    <div class="flex gap-3 mb-4">
+      <img src="squelettes/img/urlogo2019.png" alt="UR" class="h-10 object-contain opacity-90" />
+      <img src="squelettes/img/logo.png"        alt="ACEIoT" class="h-10 object-contain opacity-90" />
+    </div>
+
+    <div id="hero-texts" class="space-y-4 max-w-2xl">
+      <h1 id="hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-tight">
+        Focused postgraduate study
+      </h1>
+      <p id="hero-desc" class="text-base text-slate-200 leading-7">
+        A clear pathway into applied research, advanced labs, and regional collaboration.
+      </p>
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-4">
+      <a href="spip.php?page=programs"
+         class="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+         style="background:var(--ace-primary)">
+        Explore programs
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="spip.php?page=admissions"
+         class="inline-flex items-center gap-2 rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10">
+        Apply now
+      </a>
+    </div>
+
+    <!-- Slide dots -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+      <button class="hero-dot w-2 h-2 rounded-full bg-white/60 active-dot" data-index="0"></button>
+      <button class="hero-dot w-2 h-2 rounded-full bg-white/30" data-index="1"></button>
+      <button class="hero-dot w-2 h-2 rounded-full bg-white/30" data-index="2"></button>
+      <button class="hero-dot w-2 h-2 rounded-full bg-white/30" data-index="3"></button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var slides = [
+    { url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&h=900&fit=crop', title: 'Focused postgraduate study', desc: 'A clear pathway into applied research, advanced labs, and regional collaboration.' },
+    { url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&h=900&fit=crop', title: 'Research with regional relevance', desc: 'Study and build solutions shaped by Rwanda\'s digital priorities and public needs.' },
+    { url: 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1600&h=900&fit=crop', title: 'Modern labs and practical work', desc: 'Learn through supervised projects, technical workshops, and applied systems work.' },
+    { url: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&h=900&fit=crop', title: 'Partnerships that support impact', desc: 'Collaborate with universities, institutions, and partners across Africa and beyond.' },
+  ];
+  var img   = document.getElementById('hero-img');
+  var title = document.getElementById('hero-title');
+  var desc  = document.getElementById('hero-desc');
+  var dots  = document.querySelectorAll('.hero-dot');
+  var current = 0;
+
+  function go(n) {
+    current = (n + slides.length) % slides.length;
+    img.src        = slides[current].url;
+    title.textContent = slides[current].title;
+    desc.textContent  = slides[current].desc;
+    dots.forEach(function (d, i) {
+      d.classList.toggle('bg-white/60', i === current);
+      d.classList.toggle('bg-white/30', i !== current);
+    });
+  }
+
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () { go(parseInt(d.dataset.index)); });
+  });
+
+  setInterval(function () { go(current + 1); }, 5000);
+}());
+</script>
+
+<!-- ===================== MAIN CONTENT ===================== -->
+<main class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+  <div class="space-y-20 py-16">
+
+    <!-- Background blurb -->
+    <section class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+      <div class="space-y-8">
+        <div>
+          <span class="ace-section-label">Background</span>
+          <h2 class="mt-4 text-2xl font-semibold leading-tight tracking-tight" style="color:var(--ace-text)">Focused postgraduate education in ICT and connected systems.</h2>
+          <p class="mt-3 text-sm leading-7" style="color:var(--ace-muted)">ACEIoT brings together graduate study, applied research, and institutional partnerships within the University of Rwanda.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="ace-card">
+            <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl" style="background:var(--ace-primary-soft);color:var(--ace-primary)">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <h3 class="text-base font-semibold" style="color:var(--ace-text)">Applied postgraduate study</h3>
+            <p class="mt-2 text-sm leading-6" style="color:var(--ace-muted)">Structured MSc and PhD pathways centred on digital systems, networks, and practical research.</p>
+          </div>
+          <div class="ace-card">
+            <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl" style="background:var(--ace-primary-soft);color:var(--ace-primary)">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+            </div>
+            <h3 class="text-base font-semibold" style="color:var(--ace-text)">Regional collaboration</h3>
+            <p class="mt-2 text-sm leading-6" style="color:var(--ace-muted)">Work with universities, institutions, and funding partners supporting graduate research and innovation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature card -->
+      <div class="relative overflow-hidden rounded-[2.5rem] p-8 text-white shadow-xl lg:p-10"
+           style="background:linear-gradient(135deg,var(--ace-primary-dark),var(--ace-primary));box-shadow:0 20px 44px -26px rgba(13,111,148,0.4)">
+        <div class="pointer-events-none absolute right-0 top-0 h-64 w-64 translate-x-1/3 -translate-y-1/2 rounded-full bg-white/10" style="filter:blur(48px)"></div>
+        <p class="relative z-10 text-xs font-bold uppercase tracking-[.3em]" style="color:#f3dfb0">At a glance</p>
+        <h2 class="relative z-10 mt-4 text-2xl font-semibold leading-tight tracking-tight">Graduate study and research aligned with Rwanda's digital priorities.</h2>
+        <p class="relative z-10 mt-4 text-sm leading-7 text-slate-100">The centre keeps its offer simple: advanced training, supervised research, and partnerships that strengthen academic and public impact.</p>
+        <div class="relative z-10 mt-10 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-[2rem] border border-white/20 bg-white/10 p-6 backdrop-blur-sm transition hover:bg-white/20">
+            <p class="text-sm font-semibold text-white">Postgraduate focus</p>
+            <p class="mt-3 text-sm text-slate-100">MSc, PhD, and executive learning designed for advanced ICT practice.</p>
+          </div>
+          <div class="rounded-[2rem] border border-white/20 bg-white/10 p-6 backdrop-blur-sm transition hover:bg-white/20">
+            <p class="text-sm font-semibold text-white">Partnership-led delivery</p>
+            <p class="mt-3 text-sm text-slate-100">Research, scholarships, and events supported by university and external partners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs -->
+    <section class="space-y-10">
+      <div>
+        <span class="ace-section-label">Programs</span>
+        <h2 class="mt-4 text-2xl font-semibold" style="color:var(--ace-text)">Three clear study pathways.</h2>
+        <p class="mt-2 text-sm leading-7" style="color:var(--ace-muted)">Choose a postgraduate or executive route shaped around advanced ICT capability and applied research.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+        <!-- MSc -->
+        <div class="ace-card overflow-hidden !p-0">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80" alt="MSc" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-2xl" style="background:var(--ace-primary-soft);color:var(--ace-primary)">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold" style="color:var(--ace-text)">MSc in ICT</h3>
+            <p class="text-sm" style="color:var(--ace-muted)">Postgraduate study in connected systems, data, and digital infrastructure.</p>
+            <ul class="space-y-1 text-sm" style="color:var(--ace-muted)">
+              <li class="flex justify-between"><span>IoT &amp; Embedded Systems</span><span class="font-medium">2 years</span></li>
+              <li class="flex justify-between"><span>Data Science &amp; AI</span><span class="font-medium">2 years</span></li>
+              <li class="flex justify-between"><span>Cybersecurity</span><span class="font-medium">2 years</span></li>
+              <li class="flex justify-between"><span>Digital Infrastructure</span><span class="font-medium">2 years</span></li>
+            </ul>
+            <a href="spip.php?page=programs" class="inline-flex items-center gap-1 text-sm font-semibold" style="color:var(--ace-primary)">View MSc programs →</a>
+          </div>
+        </div>
+
+        <!-- PhD -->
+        <div class="ace-card overflow-hidden !p-0">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80" alt="PhD" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-2xl" style="background:var(--ace-secondary-soft,rgba(159,122,47,0.12));color:var(--ace-secondary)">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold" style="color:var(--ace-text)">PhD in ICT</h3>
+            <p class="text-sm" style="color:var(--ace-muted)">Research-led doctoral study focused on high-impact ICT challenges in the region.</p>
+            <ul class="space-y-1 text-sm" style="color:var(--ace-muted)">
+              <li class="flex justify-between"><span>Internet of Things</span><span class="font-medium">3-5 years</span></li>
+              <li class="flex justify-between"><span>Artificial Intelligence</span><span class="font-medium">3-5 years</span></li>
+              <li class="flex justify-between"><span>Wireless Communications</span><span class="font-medium">3-5 years</span></li>
+              <li class="flex justify-between"><span>Sustainable ICT</span><span class="font-medium">3-5 years</span></li>
+            </ul>
+            <a href="spip.php?page=programs" class="inline-flex items-center gap-1 text-sm font-semibold" style="color:var(--ace-primary)">View PhD tracks →</a>
+          </div>
+        </div>
+
+        <!-- Executive -->
+        <div class="ace-card overflow-hidden !p-0">
+          <div class="h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80" alt="Executive" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-2xl" style="background:rgba(19,49,63,0.08);color:var(--ace-text)">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold" style="color:var(--ace-text)">Executive Courses</h3>
+            <p class="text-sm" style="color:var(--ace-muted)">Short, focused programmes for working professionals and institutional partners.</p>
+            <ul class="space-y-1 text-sm" style="color:var(--ace-muted)">
+              <li class="flex justify-between"><span>IoT Architecture</span><span class="font-medium">8 weeks</span></li>
+              <li class="flex justify-between"><span>Cloud Platforms</span><span class="font-medium">12 weeks</span></li>
+              <li class="flex justify-between"><span>Leadership for ICT</span><span class="font-medium">4 days</span></li>
+              <li class="flex justify-between"><span>Custom Cohorts</span><span class="font-medium">Flexible</span></li>
+            </ul>
+            <a href="spip.php?page=programs" class="inline-flex items-center gap-1 text-sm font-semibold" style="color:var(--ace-primary)">View short courses →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="space-y-10">
+      <div class="grid gap-6 lg:grid-cols-2 lg:items-end">
+        <div>
+          <span class="ace-section-label">Statistics</span>
+          <h2 class="mt-4 text-2xl font-semibold" style="color:var(--ace-text)">A concise view of scale and participation.</h2>
+          <p class="mt-2 text-sm leading-7" style="color:var(--ace-muted)">Headline figures summarise graduate output, current enrolment, and the breadth of the academic community.</p>
+        </div>
+        <div class="rounded-[32px] border p-8 shadow-sm" style="border-color:var(--ace-border);background:var(--ace-surface)">
+          <p class="text-xs font-semibold uppercase tracking-[.3em]" style="color:var(--ace-muted)">Current focus</p>
+          <div class="mt-4 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-3xl p-5" style="background:var(--ace-card)">
+              <p class="text-3xl font-semibold" style="color:var(--ace-text)">24</p>
+              <p class="mt-2 text-sm" style="color:var(--ace-muted)">Active research projects</p>
+            </div>
+            <div class="rounded-3xl p-5" style="background:var(--ace-card)">
+              <p class="text-3xl font-semibold" style="color:var(--ace-text)">7</p>
+              <p class="mt-2 text-sm" style="color:var(--ace-muted)">Core partner institutions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat grid -->
+      <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <div class="rounded-[2rem] p-6 text-white" style="background:linear-gradient(135deg,var(--ace-primary),var(--ace-primary-dark))">
+          <p class="text-3xl font-semibold">28</p>
+          <p class="mt-2 text-sm text-white/80">PhD Graduates</p>
+        </div>
+        <div class="rounded-[2rem] p-6 text-white" style="background:linear-gradient(135deg,var(--ace-secondary),#c6a663)">
+          <p class="text-3xl font-semibold">142</p>
+          <p class="mt-2 text-sm text-white/80">MSc Graduates</p>
+        </div>
+        <div class="rounded-[2rem] p-6 text-white" style="background:linear-gradient(135deg,var(--ace-primary-dark),var(--ace-primary))">
+          <p class="text-3xl font-semibold">125</p>
+          <p class="mt-2 text-sm text-white/80">Rwandan Graduates</p>
+        </div>
+        <div class="rounded-[2rem] p-6 text-white" style="background:linear-gradient(135deg,#5b7280,#2e4958)">
+          <p class="text-3xl font-semibold">45</p>
+          <p class="mt-2 text-sm text-white/80">International Graduates</p>
+        </div>
+        <div class="rounded-[2rem] p-6 text-white" style="background:linear-gradient(135deg,var(--ace-secondary),#dfbf79)">
+          <p class="text-3xl font-semibold">78</p>
+          <p class="mt-2 text-sm text-white/80">Female Graduates</p>
+        </div>
+        <div class="rounded-[2rem] p-6 text-white" style="background:linear-gradient(135deg,var(--ace-primary),#3d89a7)">
+          <p class="text-3xl font-semibold">89</p>
+          <p class="mt-2 text-sm text-white/80">Male Graduates</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="space-y-10">
+      <div class="flex items-end justify-between flex-wrap gap-4">
+        <div>
+          <span class="ace-section-label">Latest News</span>
+          <h2 class="mt-4 text-2xl font-semibold" style="color:var(--ace-text)">Stories and updates from ACEIoT.</h2>
+        </div>
+        <a href="spip.php?rubrique1" class="text-sm font-semibold flex items-center gap-1" style="color:var(--ace-primary)">
+          All news →
+        </a>
+      </div>
+
+      <div id="news-grid" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <!-- Populated by JS fetch from aceiot-news.php; fallback below -->
+        <div class="animate-pulse rounded-[28px] p-6 h-64" style="background:var(--ace-card)"></div>
+        <div class="animate-pulse rounded-[28px] p-6 h-64" style="background:var(--ace-card)"></div>
+        <div class="animate-pulse rounded-[28px] p-6 h-64" style="background:var(--ace-card)"></div>
+      </div>
+    </section>
+
+    <!-- Events & Announcements -->
+    <section class="grid gap-8 lg:grid-cols-2">
+      <!-- Events -->
+      <div class="rounded-[2rem] border p-8 space-y-6" style="border-color:var(--ace-border);background:var(--ace-surface)">
+        <div>
+          <span class="ace-section-label">Events</span>
+          <h2 class="mt-4 text-xl font-semibold" style="color:var(--ace-text)">Upcoming events.</h2>
+        </div>
+        <ul class="space-y-4">
+          <li class="rounded-3xl p-5" style="background:var(--ace-card)">
+            <p class="text-xs font-semibold uppercase tracking-widest" style="color:var(--ace-primary)">May 12, 2026</p>
+            <p class="mt-1 text-sm font-semibold" style="color:var(--ace-text)">Graduate research clinic</p>
+            <p class="mt-1 text-xs" style="color:var(--ace-muted)">A short advisory session for MSc and PhD applicants preparing proposals.</p>
+          </li>
+          <li class="rounded-3xl p-5" style="background:var(--ace-card)">
+            <p class="text-xs font-semibold uppercase tracking-widest" style="color:var(--ace-primary)">June 1, 2026</p>
+            <p class="mt-1 text-sm font-semibold" style="color:var(--ace-text)">Industry Connect seminar</p>
+            <p class="mt-1 text-xs" style="color:var(--ace-muted)">Guest speakers discuss digital infrastructure, public systems, and applied research.</p>
+          </li>
+          <li class="rounded-3xl p-5" style="background:var(--ace-card)">
+            <p class="text-xs font-semibold uppercase tracking-widest" style="color:var(--ace-primary)">July 22, 2026</p>
+            <p class="mt-1 text-sm font-semibold" style="color:var(--ace-text)">ACEIoT annual symposium</p>
+            <p class="mt-1 text-xs" style="color:var(--ace-muted)">A concise programme of student papers, prototypes, and research networking.</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Announcements -->
+      <div class="rounded-[2rem] border p-8 space-y-6" style="border-color:var(--ace-border);background:var(--ace-surface)">
+        <div>
+          <span class="ace-section-label">Announcements</span>
+          <h2 class="mt-4 text-xl font-semibold" style="color:var(--ace-text)">Important notices.</h2>
+        </div>
+        <ul class="space-y-4">
+          <li class="rounded-3xl border-l-4 p-5" style="background:var(--ace-card);border-left-color:var(--ace-primary)">
+            <p class="text-sm font-semibold" style="color:var(--ace-text)">Applications close on 30 June 2026</p>
+            <p class="mt-1 text-xs" style="color:var(--ace-muted)">MSc and PhD applicants should submit transcripts, references, and a short statement of interest.</p>
+          </li>
+          <li class="rounded-3xl p-5" style="background:var(--ace-card)">
+            <p class="text-sm font-semibold" style="color:var(--ace-text)">Scholarship briefing scheduled for 16 May</p>
+            <p class="mt-1 text-xs" style="color:var(--ace-muted)">An online session will outline available funding routes and the required application documents.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="space-y-8">
+      <div>
+        <span class="ace-section-label">Partners</span>
+        <h2 class="mt-4 text-2xl font-semibold" style="color:var(--ace-text)">Supported by leading institutions.</h2>
+      </div>
+      <div class="flex flex-wrap items-center gap-8">
+        <img src="squelettes/img/wrld.png"       alt="World Bank"   class="h-10 object-contain opacity-70 hover:opacity-100 transition" />
+        <img src="squelettes/img/urlogo2019.png"  alt="UR"           class="h-10 object-contain opacity-70 hover:opacity-100 transition" />
+        <span class="text-sm px-4 py-2 rounded-full" style="background:var(--ace-card);color:var(--ace-muted)">African Union</span>
+        <span class="text-sm px-4 py-2 rounded-full" style="background:var(--ace-card);color:var(--ace-muted)">IEEE</span>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- News fetch script -->
+<script>
+(function () {
+  var grid = document.getElementById('news-grid');
+
+  function renderNews(items) {
+    var photos = [
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+      'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&q=80',
+    ];
+    grid.innerHTML = items.slice(0, 3).map(function (item, i) {
+      return '<article class="group rounded-[28px] border bg-white p-6 shadow-sm transition hover:shadow-lg hover:-translate-y-1" style="border-color:var(--ace-border)">'
+        + '<div class="mb-4 h-44 overflow-hidden rounded-3xl">'
+        + '<img src="' + photos[i % photos.length] + '" alt="' + item.title + '" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />'
+        + '</div>'
+        + '<div class="space-y-2">'
+        + '<div class="flex items-center justify-between text-xs uppercase tracking-widest" style="color:var(--ace-muted)">'
+        + '<span style="color:var(--ace-primary)">' + (item.category || '') + '</span>'
+        + '<span>' + (item.date || '') + '</span>'
+        + '</div>'
+        + '<h3 class="text-sm font-semibold leading-6" style="color:var(--ace-text)">' + item.title + '</h3>'
+        + '<p class="text-xs leading-5" style="color:var(--ace-muted)">' + (item.summary || '') + '</p>'
+        + '<a href="spip.php?article=' + encodeURIComponent(item.slug || '') + '" class="inline-flex items-center gap-1 text-xs font-semibold mt-2" style="color:var(--ace-primary)">Read more →</a>'
+        + '</div></article>';
+    }).join('');
+  }
+
+  fetch('aceiot-news.php')
+    .then(function (r) { return r.json(); })
+    .then(function (d) { if (d.ok && d.items) renderNews(d.items); })
+    .catch(function () {
+      /* fallback static items */
+      renderNews([
+        { slug: 'graduate-research-call',  title: 'Graduate research call opens for the next intake',  summary: 'Applicants can now submit proposals in intelligent systems, networks, and digital services.', category: 'Research',     date: 'April 18, 2026' },
+        { slug: 'industry-series-launch',  title: 'Industry Connect series starts this term',          summary: 'A new programme links postgraduate study with public-sector and industry practice.',          category: 'Partnership', date: 'April 2, 2026' },
+        { slug: 'research-symposium-2026', title: 'Research symposium to showcase student work',       summary: 'The annual symposium will feature short presentations, demos, and partner sessions.',         category: 'Events',      date: 'March 21, 2026' },
+      ]);
+    });
+}());
+</script>
+
+<INCLURE{fond=inc-footer} />
