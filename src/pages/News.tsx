@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 import PageMeta from '../components/ui/PageMeta';
 import SectionHeader from '../components/ui/SectionHeader';
 import PageBanner from '../components/ui/PageBanner';
-import { useAsyncData } from '../hooks/useAsyncData';
-import { newsList } from '../data/content';
+import { useSpipNews } from '../hooks/useSpipNews';
 
 export default function News() {
   const [query, setQuery] = useState('');
-  const { data, loading } = useAsyncData(newsList);
+  const { data, loading, source } = useSpipNews();
 
   const filteredNews = useMemo(() => {
     if (!data) return [];
@@ -40,7 +39,10 @@ export default function News() {
             title="Stories, updates, and announcements from ACEIoT."
             description="Search the latest news and discover our center’s recent research, partnership, and community activity."
           />
-          <div className="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-4">
+          <div className="mt-4 rounded-3xl border border-slate-200 bg-slate-50 p-4 text-xs uppercase tracking-[0.22em] text-slate-500">
+            Source: {source === 'spip' ? 'SPIP endpoint' : 'Local fallback'}
+          </div>
+          <div className="mt-4 rounded-3xl border border-slate-200 bg-slate-50 p-4">
             <div className="flex items-center gap-3">
               <Search className="h-4 w-4 text-slate-400" />
               <input

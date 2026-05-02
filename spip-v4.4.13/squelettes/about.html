@@ -1,0 +1,101 @@
+<INCLURE{fond=inc-head, titre=About ACEIoT} />
+<INCLURE{fond=inc-nav} />
+
+<main class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+  <div class="space-y-16">
+
+    <!-- Banner -->
+    <div class="relative overflow-hidden rounded-[2.5rem]" style="min-height:220px">
+      <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80"
+           alt="" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(6,25,35,0.85),rgba(8,38,52,0.6))"></div>
+      <div class="relative z-10 p-8 sm:p-12 flex flex-col justify-end" style="min-height:220px">
+        <span class="ace-section-label" style="background:rgba(255,255,255,0.15);color:#fff">About</span>
+        <h1 class="mt-4 text-2xl sm:text-3xl font-semibold text-white leading-tight">Building digital innovation leaders for Rwanda and beyond.</h1>
+        <p class="mt-2 text-sm text-slate-200">ACEIoT combines academic rigor, applied research, and industry collaboration to deliver real technology impact for communities.</p>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <section class="space-y-8 rounded-[32px] p-8 shadow-sm" style="background:var(--ace-surface)">
+      <div>
+        <span class="ace-section-label">About</span>
+        <h2 class="mt-4 text-2xl font-semibold" style="color:var(--ace-text)">A research partnership center shaping the future of African IoT innovation.</h2>
+        <p class="mt-2 text-sm leading-7" style="color:var(--ace-muted)">ACEIoT brings together academic excellence, industry collaboration, and community-driven research to build resilient digital infrastructure across Rwanda and the region.</p>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-[0.7fr_0.3fr]">
+        <div class="space-y-6 text-sm leading-7" style="color:var(--ace-muted)">
+          <p>
+            ACEIoT supports Masters, PhD, and professional education with a focus on applied research, sustainable technology, and inclusive capacity building. Our center is anchored in the University of Rwanda and funded through strategic partnerships that expand opportunity across sectors.
+          </p>
+          <p>
+            Our work blends data science, connectivity, intelligent systems and user-centered design to deliver solutions that matter for health, agriculture, energy, and smart infrastructure.
+          </p>
+          <a href="spip.php?page=programs"
+             class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+             style="background:var(--ace-primary)">
+            Explore programs
+          </a>
+        </div>
+
+        <div class="rounded-[2rem] p-6 shadow-sm" style="background:var(--ace-card)">
+          <p class="text-xs uppercase tracking-[.35em]" style="color:var(--ace-muted)">Highlights</p>
+          <ul class="mt-6 space-y-4 text-sm leading-7" style="color:var(--ace-muted)">
+            <li class="rounded-3xl p-4 shadow-sm" style="background:var(--ace-surface)">
+              <strong class="block" style="color:var(--ace-text)">Interdisciplinary research</strong>
+              Applied projects in sensors, AI and resilient networks.
+            </li>
+            <li class="rounded-3xl p-4 shadow-sm" style="background:var(--ace-surface)">
+              <strong class="block" style="color:var(--ace-text)">Global partnerships</strong>
+              Collaborations with World Bank, regional institutions, and industry.
+            </li>
+            <li class="rounded-3xl p-4 shadow-sm" style="background:var(--ace-surface)">
+              <strong class="block" style="color:var(--ace-text)">Student impact</strong>
+              Training future leaders in digital inclusion and innovation.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research highlights -->
+    <section class="space-y-8">
+      <div>
+        <span class="ace-section-label">Research</span>
+        <h2 class="mt-4 text-2xl font-semibold" style="color:var(--ace-text)">Areas of research focus.</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="ace-card">
+          <h3 class="text-sm font-semibold" style="color:var(--ace-text)">Connected agriculture systems</h3>
+          <p class="mt-2 text-sm" style="color:var(--ace-muted)">Practical sensing tools for water use, crop monitoring, and resilient field operations.</p>
+        </div>
+        <div class="ace-card">
+          <h3 class="text-sm font-semibold" style="color:var(--ace-text)">Edge intelligence for health services</h3>
+          <p class="mt-2 text-sm" style="color:var(--ace-muted)">Distributed models for monitoring, triage support, and reliable local data processing.</p>
+        </div>
+        <div class="ace-card">
+          <h3 class="text-sm font-semibold" style="color:var(--ace-text)">Digital infrastructure and public systems</h3>
+          <p class="mt-2 text-sm" style="color:var(--ace-muted)">Research on networks, service delivery, and intelligent public infrastructure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="space-y-8">
+      <div>
+        <span class="ace-section-label">Partners</span>
+        <h2 class="mt-4 text-2xl font-semibold" style="color:var(--ace-text)">Our institutional partners.</h2>
+      </div>
+      <div class="flex flex-wrap items-center gap-8">
+        <img src="squelettes/img/wrld.png"      alt="World Bank" class="h-10 object-contain opacity-70 hover:opacity-100 transition" />
+        <img src="squelettes/img/urlogo2019.png" alt="UR"        class="h-10 object-contain opacity-70 hover:opacity-100 transition" />
+        <span class="text-sm px-4 py-2 rounded-full" style="background:var(--ace-card);color:var(--ace-muted)">African Union</span>
+        <span class="text-sm px-4 py-2 rounded-full" style="background:var(--ace-card);color:var(--ace-muted)">IEEE</span>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<INCLURE{fond=inc-footer} />

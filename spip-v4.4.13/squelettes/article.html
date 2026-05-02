@@ -1,0 +1,45 @@
+<INCLURE{fond=inc-head, titre=#TITRE} />
+<INCLURE{fond=inc-nav} />
+
+<main class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
+
+  <!-- Page banner -->
+  <div class="relative overflow-hidden rounded-[2.5rem] mb-12" style="min-height:220px">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80"
+         alt="" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(6,25,35,0.85),rgba(8,38,52,0.6))"></div>
+    <div class="relative z-10 p-8 sm:p-12 flex flex-col justify-end h-full" style="min-height:220px">
+      <span class="ace-section-label text-white/80" style="background:rgba(255,255,255,0.15);color:#fff">
+        <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>[(#NOM_RUBRIQUE)]</BOUCLE_rubrique>
+        <DEFAUT_rubrique>News</DEFAUT_rubrique>
+      </span>
+      <h1 class="mt-4 text-2xl sm:text-3xl font-semibold text-white leading-tight">[(#TITRE)]</h1>
+    </div>
+  </div>
+
+  <!-- Article meta -->
+  <div class="flex flex-wrap items-center gap-4 text-xs uppercase tracking-widest mb-8" style="color:var(--ace-muted)">
+    <span style="color:var(--ace-primary)">
+      <BOUCLE_cat(RUBRIQUES){id_rubrique}>[(#NOM_RUBRIQUE)]</BOUCLE_cat>
+    </span>
+    <span>[(#DATE|affdate)]</span>
+    <span>By [(#NOM_AUTEUR|?{ACEIoT Editorial})]</span>
+  </div>
+
+  <!-- Article body -->
+  <div class="rounded-[2rem] border p-8 sm:p-12 mb-10 prose prose-slate max-w-none"
+       style="border-color:var(--ace-border);background:var(--ace-surface)">
+    [(#CHAPO)]
+    [(#TEXTE)]
+  </div>
+
+  <!-- Back link -->
+  <div class="mt-8">
+    <a href="spip.php?rubrique1" class="inline-flex items-center gap-2 text-sm font-semibold" style="color:var(--ace-primary)">
+      ← Back to all news
+    </a>
+  </div>
+
+</main>
+
+<INCLURE{fond=inc-footer} />
